@@ -1,6 +1,6 @@
 #include <tgmath.h>
 #include <iostream>
-#include </Users/user_name/Desktop/Physics/kinematiclib.h>
+#include <Dependency/kinematiclib.h>
 using namespace std;
 	float get_time(float time, float displacement, float velocity, float acceleration){
 		if (acceleration != 0 && displacement != 0){
