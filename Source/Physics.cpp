@@ -63,6 +63,7 @@ int main(){
 	std::cin >> wtfDoYouWant;
 	if (wtfDoYouWant == "time"){
 		float time = get_time(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
+		//Update to include catch exception then exit
 		printf("t = %f\n", time);
 	}else if (wtfDoYouWant == "displacement"){
 		float displacement = get_displacement(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
