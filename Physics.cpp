@@ -5,30 +5,8 @@
 
 using namespace std;
 
-std::vector<float *> init(){
-	float ptime;
-	float displacement;
-	float velocity;
-	float acceleration;
-	std::cout << "Enter the change in time: ";
-	std::cin >> ptime;
-	std::cout << "\n";
-	std::cout << "Enter the change in displacement: ";
-	std::cin >> displacement;
-	std::cout << "\n";
-	std::cout << "Enter the velocity or its change: ";
-	std::cin >> velocity;
-	std::cout << "\n";
-	std::cout << "Enter the acceleration or its change: ";
-	std::cin >> acceleration;
-	std::cout << "\n";
-	float* ptrTime = &ptime;
-	float* ptrDisp = &displacement;
-	float* ptrVel = &velocity;
-	float* ptrAcc = &acceleration;
-	std::vector<float *> pointerArray = {ptrTime, ptrDisp, ptrVel, ptrAcc};
-	return pointerArray;
-}
+
+
 	float get_time(float time, float displacement, float velocity, float acceleration){
 		if (acceleration != 0 && displacement != 0){
 			return sqrt(((2*displacement)/acceleration));
@@ -63,25 +41,27 @@ std::vector<float *> init(){
 	}
 
 int main(){
-	std::vector<float *> pointerArray = init();
-	float* ptrTime = pointerArray[0];
-	float* ptrDisplacement = pointerArray[1];
-	float* ptrVelocity = pointerArray[2];
-	float* ptrAcceleration = pointerArray[3];
+	//Init
+	
+	float* ptrTime = &ptime;
+	float* ptrDisp = &displacement;
+	float* ptrVel = &velocity;
+	float* ptrAcc = &acceleration;
+	//Do stuff
 	string wtfDoYouWant;
 	std::cout << "Are you calculating for acceleration, velocity, displacement, or time?\n";
 	std::cin >> wtfDoYouWant;
 	if (wtfDoYouWant == "time"){
-		float time = get_time(*ptrTime, *ptrDisplacement, *ptrVelocity, *ptrAcceleration);
+		float time = get_time(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
 		std::cout << time;
 	}else if (wtfDoYouWant == "displacement"){
-		float displacement = get_displacement(*ptrTime, *ptrDisplacement, *ptrVelocity, *ptrAcceleration);
+		float displacement = get_displacement(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
 		
 	}else if (wtfDoYouWant == "velocity"){
-		float velocity = get_velocity(*ptrTime, *ptrDisplacement, *ptrVelocity, *ptrAcceleration);
+		float velocity = get_velocity(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
 		
 	}else if (wtfDoYouWant == "acceleration"){
-		float acceleration = get_acceleration(*ptrTime, *ptrDisplacement, *ptrVelocity, *ptrAcceleration);
+		float acceleration = get_acceleration(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
 		
 	}
 }
