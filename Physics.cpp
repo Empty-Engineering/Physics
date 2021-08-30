@@ -1,11 +1,7 @@
 #include <tgmath.h>
 #include <iostream>
 #include <kinematiclib.h>
-
 using namespace std;
-
-
-
 	float get_time(float time, float displacement, float velocity, float acceleration){
 		if (acceleration != 0 && displacement != 0){
 			return sqrt(((2*displacement)/acceleration));
@@ -39,27 +35,28 @@ using namespace std;
 		}
 	}
 int main(){
-	
-	
+	float ptime = request_time();
+	float displacement = request_displacement();
+	float velocity = request_velocity();
+	float acceleration = request_acceleration();
 	float* ptrTime = &ptime;
 	float* ptrDisp = &displacement;
 	float* ptrVel = &velocity;
 	float* ptrAcc = &acceleration;
-	
 	string wtfDoYouWant;
 	std::cout << "Are you calculating for acceleration, velocity, displacement, or time?\n";
 	std::cin >> wtfDoYouWant;
 	if (wtfDoYouWant == "time"){
 		float time = get_time(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		std::cout << time;
+		std::cout << "∂t = "<< time;
 	}else if (wtfDoYouWant == "displacement"){
 		float displacement = get_displacement(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		
+		std::cout << "x = " << displacement;
 	}else if (wtfDoYouWant == "velocity"){
 		float velocity = get_velocity(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		
+		std::cout << "v = "<<velocity;
 	}else if (wtfDoYouWant == "acceleration"){
 		float acceleration = get_acceleration(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		
+		std::cout << "a = "<<acceleration;
 	}
 }
