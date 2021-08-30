@@ -1,3 +1,8 @@
+//Lukas Robin
+//30.08.2021
+//v1.0-beta
+
+
 #include <tgmath.h>
 #include <iostream>
 #include <stdio.h>
