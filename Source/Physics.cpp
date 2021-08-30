@@ -4,35 +4,44 @@
 #include "Dependency/kinematiclib.h"
 using namespace std;
 	float get_time(float time, float displacement, float velocity, float acceleration){
-		if (acceleration != 0 && displacement != 0){
+		if (time != 0){
+			return time;
+		}else if (acceleration != 0 && displacement != 0){
 			return sqrt(((2*displacement)/acceleration));
 		}else if (velocity != 0 && displacement != 0){
 			return displacement/velocity;
 		}else{
-			return time;
+			throw logic_error;
 		}
 	}
 	float get_displacement(float time, float displacement, float velocity, float acceleration){
-		if (acceleration != 0 || velocity !=0){
+		if (displacement != 0){
+			return displacement;
+		}else if (acceleration != 0 || velocity !=0){
 			return (velocity*time+(0.5*(acceleration*time*time)));
 		}else{
-			return displacement;
+			throw logic_error;
 		}
 	}
 	float get_velocity(float time, float displacement, float velocity, float acceleration){
-		if (time != 0){
-			return (displacement/time)+(acceleration*time);
-		}else{
+		if (velocity != 0){
 			return velocity;
+		}else if (time != 0){
+			return ((displacement/time)+(acceleration * time));
+		}else{
+			throw logic_error;
 		}
 	}
 	float get_acceleration(float time, float displacement, float velocity, float acceleration){
-		if (velocity != 0 && time != 0){
+		if (acceleration !=0){
+			return acceleration;
+		}else if (velocity != 0 && time != 0){
 			return velocity/time;
 		}else if (displacement != 0 && time != 0){
-			return displacement/(time*time);
-		}else{
-			return acceleration;
+			return (displacement/(time * time));
+		}
+		else{
+			throw logic_error;
 		}
 	}
 int main(){
