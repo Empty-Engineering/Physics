@@ -39,6 +39,3 @@ float request_time(){
 	printf("\n");
     return ptime;
 };
-int main(){
-    return 0;
-}

@@ -1,6 +1,6 @@
 #include <tgmath.h>
 #include <iostream>
-#include <kinematiclib.h>
+#include </Users/lukasrobin/Desktop/Physics/kinematiclib.h>
 using namespace std;
 	float get_time(float time, float displacement, float velocity, float acceleration){
 		if (acceleration != 0 && displacement != 0){
@@ -48,15 +48,15 @@ int main(){
 	std::cin >> wtfDoYouWant;
 	if (wtfDoYouWant == "time"){
 		float time = get_time(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		std::cout << "∂t = "<< time;
+		printf("t = %f\n", time);
 	}else if (wtfDoYouWant == "displacement"){
 		float displacement = get_displacement(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		std::cout << "x = " << displacement;
+		printf("d = %f\n", displacement);
 	}else if (wtfDoYouWant == "velocity"){
 		float velocity = get_velocity(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		std::cout << "v = "<<velocity;
+		printf("v = %f\n", velocity);
 	}else if (wtfDoYouWant == "acceleration"){
 		float acceleration = get_acceleration(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
-		std::cout << "a = "<<acceleration;
+		printf("a = %f\n", acceleration);
 	}
 }
