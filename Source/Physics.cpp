@@ -1,6 +1,7 @@
 #include <tgmath.h>
 #include <iostream>
-#include <Dependency/kinematiclib.h>
+#include <stdio.h>
+#include "Dependency/kinematiclib.h"
 using namespace std;
 	float get_time(float time, float displacement, float velocity, float acceleration){
 		if (acceleration != 0 && displacement != 0){
@@ -35,10 +36,15 @@ using namespace std;
 		}
 	}
 int main(){
+	printf("-----------------------------------------------------------------\n");
 	float ptime = request_time();
+	printf("-----------------------------------------------------------------\n");
 	float displacement = request_displacement();
+	printf("-----------------------------------------------------------------\n");
 	float velocity = request_velocity();
+	printf("-----------------------------------------------------------------\n");
 	float acceleration = request_acceleration();
+	printf("-----------------------------------------------------------------\n");
 	float* ptrTime = &ptime;
 	float* ptrDisp = &displacement;
 	float* ptrVel = &velocity;
@@ -59,4 +65,5 @@ int main(){
 		float acceleration = get_acceleration(*ptrTime, *ptrDisp, *ptrVel, *ptrAcc);
 		printf("a = %f\n", acceleration);
 	}
-}
+	printf("-----------------------------------------------------------------\n");
+};
