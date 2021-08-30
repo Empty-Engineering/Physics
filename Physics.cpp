@@ -1,7 +1,6 @@
 #include <tgmath.h>
 #include <iostream>
-#include <vector>
-#include <stdio.h>
+#include <kinematiclib.h>
 
 using namespace std;
 
@@ -39,15 +38,14 @@ using namespace std;
 			return acceleration;
 		}
 	}
-
 int main(){
-	//Init
+	
 	
 	float* ptrTime = &ptime;
 	float* ptrDisp = &displacement;
 	float* ptrVel = &velocity;
 	float* ptrAcc = &acceleration;
-	//Do stuff
+	
 	string wtfDoYouWant;
 	std::cout << "Are you calculating for acceleration, velocity, displacement, or time?\n";
 	std::cin >> wtfDoYouWant;
