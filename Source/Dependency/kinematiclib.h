@@ -5,7 +5,8 @@ struct Displacement{
 newDisplacement;
 float request_displacement(){
     printf("Enter the change in displacement: ");
-	float displacement = scanf("%f", &(newDisplacement.disp));
+	float displacement;
+    scanf("%f", &newDisplacement.disp);
 	printf("\n");
     return displacement;
 }
@@ -15,7 +16,8 @@ struct Velocity{
 newVelocity;
 float request_velocity(){
     printf("Enter the change in velocity: ");
-	float velocity = scanf("%f", &(newVelocity.vel));
+	float velocity;
+    scanf("%f", &newVelocity.vel);
 	printf("\n");
     return velocity;
 }
@@ -25,7 +27,8 @@ struct Acceleration{
 newAcceleration;
 float request_acceleration(){
     printf("Enter the change in acceleration: ");
-	float acceleration = scanf("%f", &(newAcceleration.acc));
+	float acceleration;
+    scanf("%f", &newAcceleration.acc);
 	printf("\n");
     return acceleration;
 }
@@ -35,7 +38,8 @@ struct time{
 newTime;
 float request_time(){
     printf("Enter the change in time: ");
-	float ptime = scanf("%f", &(newTime.ptime));
+	float ptime;
+    scanf("%f", &newTime.ptime);
 	printf("\n");
     return ptime;
 }

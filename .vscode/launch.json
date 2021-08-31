@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "cwd": "/Users/lukasrobin/Desktop/Physics/Source",
       "environment": [],
-      "program": "/Users/lukasrobin/Desktop/Physics/Source/build/Release/outRelease",
+      "program": "/Users/lukasrobin/Desktop/Physics/Source/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "lldb",
       "miDebuggerPath": "/usr/bin/lldb",

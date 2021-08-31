@@ -11,9 +11,7 @@
 
 using namespace std;
 
-//Exception to help mitigate NaN return values
-
-int Value_Error = 0;
+exception Value_Error;
 
 //Module to calculate time
 
@@ -87,7 +85,8 @@ newDisplacement;
 
 float request_displacement(){
     printf("Enter the change in displacement: ");
-	float displacement = scanf("%f", &(newDisplacement.disp));
+	float displacement;
+    scanf("%f", &newDisplacement.disp);
 	printf("\n");
     return displacement;
 }
@@ -103,7 +102,8 @@ newVelocity;
 
 float request_velocity(){
     printf("Enter the change in velocity: ");
-	float velocity = scanf("%f", &(newVelocity.vel));
+	float velocity;
+    scanf("%f", &newVelocity.vel);
 	printf("\n");
     return velocity;
 }
@@ -119,7 +119,8 @@ newAcceleration;
 
 float request_acceleration(){
     printf("Enter the change in acceleration: ");
-	float acceleration = scanf("%f", &(newAcceleration.acc));
+	float acceleration;
+    scanf("%f", &newAcceleration.acc);
 	printf("\n");
     return acceleration;
 }
@@ -135,7 +136,8 @@ newTime;
 
 float request_time(){
     printf("Enter the change in time: ");
-	float ptime = scanf("%f", &(newTime.ptime));
+	float ptime;
+    scanf("%f", &newTime.ptime);
 	printf("\n");
     return ptime;
 }
@@ -177,7 +179,7 @@ int main(){
 		printf("t = %f\n", time);
 		}
 		//Catch exception if the value returns as NaN
-		catch (int Value_Error){
+		catch (exception Value_Error){
 			std::cout << "Value error, please try again. \n";
 		}
 
@@ -189,7 +191,7 @@ int main(){
 		printf("d = %f\n", displacement);
 		}
 		//Catch exception if the value returns as NaN
-		catch (int Value_Error){
+		catch (exception Value_Error){
 			std::cout << "Value error, please try again. \n";
 		}
 
@@ -201,7 +203,7 @@ int main(){
 		printf("v = %f\n", velocity);
 		}
 		//Catch exception if the value returns as NaN
-		catch (int Value_Error){
+		catch (exception Value_Error){
 			std::cout << "Value error, please try again. \n";
 		}
 
@@ -213,12 +215,10 @@ int main(){
 		printf("a = %f\n", acceleration);
 		}
 		//Catch exception if the value returns as NaN
-		catch (int Value_Error){
+		catch (exception Value_Error){
 			std::cout << "Value error, please try again. \n";
 		}
 	}
-
 //End with line
-
 	printf("-----------------------------------------------------------------\n");
-};
+}
