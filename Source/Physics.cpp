@@ -4,123 +4,26 @@
 #include <tgmath.h>
 #include <iostream>
 #include <stdio.h>
+#include "Dependency/kinematiclib.h"
+#include "Dependency/kinematiccalc.h"
+#include "Dependency/stylesheet.h"
 //Boilerplate
 using namespace std;
-exception Value_Error;
-//Module to calculate time
-float get_time(float time, float displacement, float velocity, float acceleration){
-	if (time != 0){
-		return time;
-	}else if (acceleration != 0 && displacement != 0){
-		return sqrt(((2*displacement)/acceleration));
-	}else if (velocity != 0 && displacement != 0){
-		return displacement/velocity;
-	}
-	//Throw exception `Value_Error` if the value returns as NaN
-	else{
-		throw Value_Error;
-	}
-}
-//Module to calculate displacement
-float get_displacement(float time, float displacement, float velocity, float acceleration){
-	if (displacement != 0){
-		return displacement;
-	}else if (acceleration != 0 || velocity !=0){
-		return (velocity*time+(0.5*(acceleration*time*time)));
-	}
-	//Throw exception `Value_Error` if the value returns as NaN
-	else{
-		throw Value_Error;
-	}
-}
-//Module to calculate velocity
-float get_velocity(float time, float displacement, float velocity, float acceleration){
-	if (velocity != 0){
-		return velocity;
-	}else if (time != 0){
-			return ((displacement/time)+(acceleration * time));
-		}
-		//Throw exception `Value_Error` if the value returns as NaN
-		else{
-			throw Value_Error;
-		}
-	}
-//Module to calculate acceleration
-float get_acceleration(float time, float displacement, float velocity, float acceleration){
-	if (acceleration !=0){
-		return acceleration;
-	}else if (velocity != 0 && time != 0){
-		return velocity/time;
-	}else if (displacement != 0 && time != 0){
-		return (displacement/(time * time));
-	}
-	//Throw exception `Value_Error` if the value returns as NaN
-	else{
-		throw Value_Error;
-	}
-}
-//Struct for displacement input
-struct Displacement{
-    float disp;
-}
-newDisplacement;
-//Function of the struct for displacement 
-float* request_displacement(){
-    printf("Enter the change in displacement: ");
-    scanf("%f", &newDisplacement.disp);
-	printf("\n");
-    return &newDisplacement.disp;
-}
-//Struct for velocity input
-struct Velocity{
-    float vel;
-}
-newVelocity;
-//Function of the struct for velocity 
-float* request_velocity(){
-    printf("Enter the change in velocity: ");
-    scanf("%f", &newVelocity.vel);
-	printf("\n");
-    return &newVelocity.vel;
-}
-//Struct for displacement input
-struct Acceleration{
-    float acc;
-}
-newAcceleration;
-//Function of the struct for acceleration 
-float* request_acceleration(){
-    printf("Enter the change in acceleration: ");
-    scanf("%f", &newAcceleration.acc);
-	printf("\n");
-    return &newAcceleration.acc;
-}
-//Struct for time input
-struct time{
-    float ptime;
-}
-newTime;
-//Function of the struct for time 
-float* request_time(){
-    printf("Enter the change in time: ");
-    scanf("%f", &newTime.ptime);
-	printf("\n");
-    return &newTime.ptime;
-}
+
 //Main function
 int main(){
 
 //Make her look pretty in the menus
 //Call on request for values
-	printf("-----------------------------------------------------------------\n");
+	DASHED_LINE();
 	float* ptime = request_time();
-	printf("-----------------------------------------------------------------\n");
+	DASHED_LINE();
 	float* displacement = request_displacement();
-	printf("-----------------------------------------------------------------\n");
+	DASHED_LINE();
 	float* velocity = request_velocity();
-	printf("-----------------------------------------------------------------\n");
+	DASHED_LINE();
 	float* acceleration = request_acceleration();
-	printf("-----------------------------------------------------------------\n");
+	DASHED_LINE();
 
 //Create pointers for the values
 
@@ -134,7 +37,6 @@ int main(){
 	string wtfDoYouWant;
 	std::cout << "Are you calculating for acceleration, velocity, displacement, or time?\n";
 	std::cin >> wtfDoYouWant;
-
 //Calculate the change in time called from dereferenced pointer
 
 	if (wtfDoYouWant == "time"){
@@ -184,5 +86,5 @@ int main(){
 		}
 	}
 //End with line
-	printf("-----------------------------------------------------------------\n");
+	DASHED_LINE();
 }
