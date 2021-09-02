@@ -1,6 +1,6 @@
 //Lukas Robin
 //30.08.2021
-//v1.0-beta
+//v1.6
 #include <tgmath.h>
 #include <iostream>
 #include <stdio.h>
