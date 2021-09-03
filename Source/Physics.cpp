@@ -9,10 +9,8 @@
 #include "Dependency/stylesheet.h"
 //Boilerplate
 using namespace std;
-
 //Main function
 int main(){
-
 //Make her look pretty in the menus
 //Call on request for values
 	DASHED_LINE();
@@ -24,16 +22,13 @@ int main(){
 	DASHED_LINE();
 	float* acceleration = request_acceleration();
 	DASHED_LINE();
-
 //Create pointers for the values
-
 	float* ptrTime = ptime;
 	float* ptrDisp = displacement;
 	float* ptrVel = velocity;
 	float* ptrAcc = acceleration;
 
 //Ask what the user wants to calculate
-
 	string wtfDoYouWant;
 	std::cout << "Are you calculating for acceleration, velocity, displacement, or time?\n";
 	std::cin >> wtfDoYouWant;
