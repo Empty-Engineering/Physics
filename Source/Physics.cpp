@@ -7,6 +7,7 @@
 #include "Dependency/kinematiclib.h"
 #include "Dependency/kinematiccalc.h"
 #include "Dependency/stylesheet.h"
+
 //Boilerplate
 using namespace std;
 //Main function

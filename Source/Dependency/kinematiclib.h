@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 //Struct for displacement input
 struct Displacement{
     float disp;
@@ -46,4 +47,15 @@ float* request_time(){
     scanf("%f", &newTime.ptime);
 	printf("\n");
     return &newTime.ptime;
+}
+struct Mass{
+    float mass;
+}
+newMass;
+//Function of the struct for displacement 
+float* request_mass(){
+    printf("Enter the mass (if unknown enter 0): ");
+    scanf("%f", &newMass.mass);
+	printf("\n");
+    return &newMass.mass;
 }
