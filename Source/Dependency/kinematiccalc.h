@@ -2,8 +2,6 @@
 #include <stdio.h>
 using namespace std;
 std::exception Value_Error;
-
-
 float get_time(float time, float displacement, float velocity, float acceleration){
 	if (time != 0){
 		return time;

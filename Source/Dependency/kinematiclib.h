@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 //Struct for displacement input
 struct Displacement{
     float disp;
