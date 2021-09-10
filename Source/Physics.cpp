@@ -15,20 +15,14 @@ int main(){
 //Make her look pretty in the menus
 //Call on request for values
 	DASHED_LINE();
-	float* ptime = request_time();
+	float* ptrTime = request_time();
 	DASHED_LINE();
-	float* displacement = request_displacement();
+	float* ptrDisp = request_displacement();
 	DASHED_LINE();
-	float* velocity = request_velocity();
+	float* ptrVel = request_velocity();
 	DASHED_LINE();
-	float* acceleration = request_acceleration();
+	float* ptrAcc = request_acceleration();
 	DASHED_LINE();
-//Create pointers for the values
-	float* ptrTime = ptime;
-	float* ptrDisp = displacement;
-	float* ptrVel = velocity;
-	float* ptrAcc = acceleration;
-
 //Ask what the user wants to calculate
 	string wtfDoYouWant;
 	std::cout << "Are you calculating for acceleration, velocity, displacement, or time?\n";

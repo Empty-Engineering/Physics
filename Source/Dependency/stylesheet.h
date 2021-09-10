@@ -1,9 +1,9 @@
 #include <stdio.h>
 class Spacers{
     public:
-    const char * dashedLine =  "-----------------------------------------------------------------\n";
-    const char * midLine = "|---------------------------------------------------------------|\n";
-    const char * emptyLine = "\n";
+        const char * dashedLine =  "-----------------------------------------------------------------\n";
+        const char * midLine = "|---------------------------------------------------------------|\n";
+        const char * emptyLine = "\n";
 };
 Spacers spacers;
 void DASHED_LINE(){

@@ -1,4 +1,7 @@
 #include <stdio.h>
+
+
+
 //Struct for displacement input
 struct Displacement{
     float disp;
@@ -11,6 +14,9 @@ float* request_displacement(){
 	printf("\n");
     return &newDisplacement.disp;
 }
+
+
+
 //Struct for velocity input
 struct Velocity{
     float vel;
@@ -23,6 +29,9 @@ float* request_velocity(){
 	printf("\n");
     return &newVelocity.vel;
 }
+
+
+
 //Struct for displacement input
 struct Acceleration{
     float acc;
@@ -35,6 +44,9 @@ float* request_acceleration(){
 	printf("\n");
     return &newAcceleration.acc;
 }
+
+
+
 //Struct for time input
 struct time{
     float ptime;
@@ -47,6 +59,10 @@ float* request_time(){
 	printf("\n");
     return &newTime.ptime;
 }
+
+
+
+
 struct Mass{
     float mass;
 }
